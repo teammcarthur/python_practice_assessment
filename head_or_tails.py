@@ -9,8 +9,10 @@ import random #imports the random library, allowing the use of shuffle, randint,
 
 
 #-------functions-------------
+#-------------------------------------------------------------------------------
 #This function gets the user to guess heads or tails until either the player or 
-#computer wins, then 
+#computer wins, then determines a winner. 
+#-------------------------------------------------------------------------------
 def heads_tails():
     user_score=0
     computer_score=0
@@ -18,17 +20,17 @@ def heads_tails():
     while user_score != 2 and computer_score != 2:
         choice=random.randint (0,1)
         computer_guess=options [choice]
-        user_guess=str (input ("Heads or Tails") )
+        user_guess=str(input("Heads or Tails"))
     if user_guess == computer_guess:
-        print ("It was {}, you guessed {}, you won that round".format (computer_guess, user_guess) )
+        print(f"It was {computer_guess}, you guessed {user_guess}, you won that round")
         user_score +=1
     else:
-        print ("It was {}, you guessed {}, you lost that round".format (computer_guess, user_guess) )
+        print(f"It was {computer_guess}, you guessed {user_guess}, you lost that round")
         computer_score +=1
 
 #-----main----------------
 if __name__ == '__main__':
-    print ("Hi! Welcome to my Heads or Tails game")
-    first_name=str (input ("What is your name") )
-    age=int (input ("What is your age") )
-    heads_tails () #this calls up the function
+    print("Hi! Welcome to my Heads or Tails game")
+    first_name=str(input("What is your name"))
+    age=int(input("What is your age"))
+    heads_tails() #this calls up the function
