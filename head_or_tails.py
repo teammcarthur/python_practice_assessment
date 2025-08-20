@@ -5,14 +5,13 @@ Version: 1.0
 Description: This is code for heads or tails 
 '''
 #-------libraries----------
-import random
+import random #imports the random library, allowing the use of shuffle, randint, and choice
 
 
 #-------functions-------------
 #This function gets the user to guess heads or tails until either the player or 
 #computer wins, then 
-
-def heads_tails () :
+def heads_tails():
     user_score=0
     computer_score=0
     options=["Heads", "Tails"]
@@ -29,4 +28,7 @@ def heads_tails () :
 
 #-----main----------------
 if __name__ == '__main__':
-    pass
+    print ("Hi! Welcome to my Heads or Tails game")
+    first_name=str (input ("What is your name") )
+    age=int (input ("What is your age") )
+    heads_tails () #this calls up the function
