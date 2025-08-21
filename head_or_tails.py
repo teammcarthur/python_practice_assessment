@@ -36,12 +36,13 @@ def heads_tails():
 if __name__ == '__main__':
     print("Hi! Welcome to my Heads or Tails game") #prints the introduction
     while(True):
-        try:
-            first_name=str(input("What is your name")) #gets the users first name
-            if(first_name.isalpha and len(first_name) < 15 and len(first_name) > 1):
-                break
-        except:
+        first_name=str(input("What is your name")) #gets the users first name
+        if(first_name.isalpha() and len(first_name) < 15 and len(first_name) > 1):
+            break
+        else:
             continue
+
+#This loops makes sure that the user enters a valid age, and forces them to try again if they do not.
     while(True):
         try:
             age=int(input("What is your age"))
