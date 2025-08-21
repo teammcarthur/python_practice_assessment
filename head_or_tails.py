@@ -21,25 +21,34 @@ def heads_tails():
         choice=random.randint (0,1)
         computer_guess=options [choice]
         user_guess=str(input("Heads or Tails"))
-    if user_guess == computer_guess:
-        print(f"It was {computer_guess}, you guessed {user_guess}, you won that round")
-        user_score +=1
+        if user_guess[0].lower() == computer_guess[0].lower():
+            print(f"It was {computer_guess}, you guessed {user_guess}, you won that round")
+            user_score +=1
+        else:
+            print(f"It was {computer_guess}, you guessed {user_guess}, you lost that round")
+            computer_score +=1
+    if(user_score == 2):
+        print('You win!')
     else:
-        print(f"It was {computer_guess}, you guessed {user_guess}, you lost that round")
-        computer_score +=1
+        print('You lose.')
 
 #-----main----------------
 if __name__ == '__main__':
     print("Hi! Welcome to my Heads or Tails game") #prints the introduction
-    first_name=str(input("What is your name")) #gets the users first name
+    while(True):
+        try:
+            first_name=str(input("What is your name")) #gets the users first name
+            if(first_name.isalpha and len(first_name) < 15 and len(first_name) > 1):
+                break
+        except:
+            continue
     while(True):
         try:
             age=int(input("What is your age"))
-            print('test')
-            if(age < 130 and age > 1):
-                print('test')
+            if(age <= 130 and age >= 1):
                 break
+            else: 
+                print('You entered an invalid age, please try enter another age')
         except:
-            print('You entered an invalid age, please try enter another age')
             continue
     heads_tails() #this calls up the function
